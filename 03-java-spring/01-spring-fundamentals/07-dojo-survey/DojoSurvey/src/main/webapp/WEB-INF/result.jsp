@@ -9,10 +9,11 @@
 </head>
 <body>
 <h1>Submitted Info</h1>
-<p>Name: <c:out value="${n}"/></p>
+<p>Name: <a href="/result/info"><c:out value="${n}"/></a></p>
 <p>Dojo Location: <c:out value="${l}"/></p>
 <p>Favorite Language: <c:out value="${lan}"/></p>
 <p>Comment: <c:out value="${c}"/></p>
+
 
 
 <form action="/">
