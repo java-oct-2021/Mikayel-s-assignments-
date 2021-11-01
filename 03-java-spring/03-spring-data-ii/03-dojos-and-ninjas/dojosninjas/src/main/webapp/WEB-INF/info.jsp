@@ -15,6 +15,8 @@
 <th>First Name</th>
 <th>Last Name</th>
 <th>Age</th>
+<th>Delete</th>
+
 </tr>
 </thead>
 <tbody>
@@ -23,6 +25,11 @@
 <td><c:out value="${ninja.firstName}"/></td>
 <td><c:out value="${ninja.lastName}"/></td>
 <td><c:out value="${ninja.age}"/></td>
+<td><form action="/delete/${ninja.id}" method="post">
+<input type="hidden" name="_method" value="delete">
+<input type="submit" value="Delete">
+</form>
+</td>
 </tr>
 </c:forEach>
 </tbody>

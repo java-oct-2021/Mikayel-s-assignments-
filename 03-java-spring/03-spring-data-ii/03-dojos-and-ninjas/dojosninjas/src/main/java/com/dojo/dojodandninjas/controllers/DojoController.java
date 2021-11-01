@@ -3,6 +3,7 @@ package com.dojo.dojodandninjas.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -36,5 +37,11 @@ public class DojoController {
 		model.addAttribute("oneD", this.dService.getOne(id));
 		model.addAttribute("allN", this.nService.getAll());
 		return "info.jsp";
+	}
+	
+	@DeleteMapping("/delete/{id}")
+	public String delete(@PathVariable("id") Long id) {
+		this.nService.delete(id);
+		return "redirect:/dojo/{id}";
 	}
 }
